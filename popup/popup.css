@@ -5,97 +5,148 @@
 }
 
 body {
-  width: 380px;
-  font-family: system-ui, sans-serif;
+  width: 420px;
+  font-family: system-ui, -apple-system, sans-serif;
   font-size: 13px;
-  background: #0f0f0f;
-  color: #e8e8e8;
+  background: #fff;
+  color: #222;
 }
+
+/* header*/
 
 header {
-  padding: 12px 16px;
-  background: #1a1a1a;
-  border-bottom: 1px solid #2a2a2a;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 9px 14px;
+  border-bottom: 1px solid #ddd;
 }
 
-header h1 {
-  font-size: 15px;
+.header-title {
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #999;
 }
+
+.header-meta {
+  font-size: 11px;
+  color: #888;
+}
+
+/* main*/
 
 main {
-  padding: 12px 16px;
-  max-height: 480px;
+  max-height: 500px;
   overflow-y: auto;
 }
 
 .status-msg {
-  color: #888;
-  font-style: italic;
-  padding: 4px 0;
-}
-
-.cookie-count {
+  padding: 12px 14px;
   font-size: 12px;
   color: #888;
-  margin-bottom: 10px;
 }
+
+/* cookie list*/
 
 .cookie-list {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
 }
 
 .cookie-item {
-  background: #1a1a1a;
-  border: 1px solid #2a2a2a;
-  border-radius: 6px;
-  padding: 10px 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid #e8e8e8;
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-.cookie-name {
-  font-weight: 600;
-  font-size: 13px;
-  color: #f0f0f0;
-  word-break: break-all;
+.cookie-item:last-child {
+  border-bottom: none;
 }
 
-.cookie-value {
-  font-family: monospace;
-  font-size: 11px;
-  color: #aaa;
-  word-break: break-all;
+/* name and risk*/
+
+.cookie-row {
+  display: grid;
+  grid-template-columns: 14px 1fr auto;
+  align-items: baseline;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
 }
 
-.cookie-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  margin-top: 2px;
+.cookie-row:hover .cookie-name {
+  color: #333;
 }
 
-.tag {
-  display: inline-block;
-  font-size: 10px;
-  padding: 2px 6px;
-  border-radius: 4px;
-  background: #2a2a2a;
+.toggle {
+  font-size: 8px;
   color: #bbb;
-  white-space: nowrap;
+  line-height: 1.6;
+  text-align: center;
 }
 
-.tag--good {
-  background: #1a3a2a;
-  color: #4caf82;
+.cookie-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #000;
+  word-break: break-all;
+  user-select: text;
 }
 
-.tag--bad {
-  background: #3a1a1a;
-  color: #cf6679;
+.risk-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+
+.risk-badge--high   { color: #cc0000; }
+.risk-badge--medium { color: #e67000; }
+.risk-badge--low    { color: #0066cc; }
+
+.cookie-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 22px;
+}
+
+/* findings*/
+
+.findings {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 3px;
+  padding-top: 7px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.finding {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.finding-label {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.finding--high   .finding-label { color: #cc0000; }
+.finding--medium .finding-label { color: #e67000; }
+.finding--low    .finding-label { color: #0066cc; }
+
+.finding-why {
+  font-size: 11px;
+  color: #555;
+  line-height: 1.55;
+}
+
+.no-findings {
+  font-size: 11px;
+  color: #007733;
 }
