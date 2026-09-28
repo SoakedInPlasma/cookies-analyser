@@ -1,1 +1,1 @@
-Whack it into your chrome exensions
+Whack it into your chrome extensions
